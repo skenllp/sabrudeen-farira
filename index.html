@@ -715,11 +715,11 @@ h1,h2,h3{ margin:0; font-weight:500; }
       <p class="invite-lead reveal" style="margin-bottom:0;">of their beloved Son</p>
       <h2 class="invite-name reveal">Mahaboob Sabrudeen</h2>
       <p class="invite-lineage reveal">
-        Grandson of <b>Mr. Samsudeen</b> &amp; <b>Late Mrs. Begum B.</b><br>
+        Grandson of <b>Mr. Samsudeen</b> &amp; <b>Late Mrs. Begum Bee</b><br>
         <span style="font-size:12px; letter-spacing:0.2em; color:var(--ink-faint);">PATERNAL</span>
       </p>
       <p class="invite-lineage reveal" style="margin-top:16px;">
-        Grandson of <b>Mr. Jeyinul Abideen</b> &amp; <b>Mrs. Jeyinul Arafa</b><br>
+        Grandson of <b>Mr. Jainul Abdeen</b> &amp; <b>Mrs. Jainul Arafa</b><br>
         <span style="font-size:12px; letter-spacing:0.2em; color:var(--ink-faint);">MATERNAL</span>
       </p>
 
@@ -753,7 +753,7 @@ h1,h2,h3{ margin:0; font-weight:500; }
   </section>
 
   <!-- SECTION 4 — FAMILY -->
-  <section id="family">
+  <!-- <section id="family">
     <div class="bg-band top"></div>
     <div class="bg-band bottom"></div>
     <div class="inner">
@@ -761,12 +761,12 @@ h1,h2,h3{ margin:0; font-weight:500; }
         <div class="family-name reveal">Mahaboob Sabrudeen</div>
         <div class="family-side reveal">
           <span class="label">Paternal</span>
-          <div class="names">Mr. Samsudeen<span class="amp">&amp;</span>Late Mrs. Begum B.</div>
+          <div class="names">Mr. Samsudeen<span class="amp">&amp;</span>Late Mrs. Begum Bee</div>
         </div>
         <div class="divider reveal" style="margin:26px auto;"></div>
         <div class="family-side reveal">
           <span class="label">Maternal</span>
-          <div class="names">Mr. Jeyinul Abideen<span class="amp">&amp;</span>Mrs. Jeyinul Arafa</div>
+          <div class="names">Mr. Jainul Abdeen<span class="amp">&amp;</span>Mrs. Jainul Arafa</div>
         </div>
       </div>
 
@@ -783,7 +783,7 @@ h1,h2,h3{ margin:0; font-weight:500; }
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- SECTION 5 — THE NIKKAH -->
   <section id="nikkah">
@@ -832,7 +832,7 @@ const EVENT = {
   // Example once confirmed: date: "19 . 09 . 2026", day: "SATURDAY", time: "7:00 PM"
   date: "18 . 10 . 2026",           // October 18, 2026
   day:  "SUNDAY",                    // Day of the week
-  time: "7:00 PM",                   // Event time
+  time: "10:30 AM - 12:30 PM",       // Event time
   venueShort: "The New College Auditorium",
   venueLong:  "Royapettah, Chennai"
 };
@@ -848,14 +848,17 @@ const EVENT = {
   const nYear = document.getElementById('nikkah-year');
 
   if(hasDate){
-    if(heroDateEl) heroDateEl.textContent = EVENT.date;
-    if(closingDateEl) closingDateEl.textContent = EVENT.date;
+    // Only update scratch reveal and nikkah sections
     if(srDateEl) srDateEl.textContent = EVENT.date;
     if(srDayEl) srDayEl.textContent = EVENT.day + ' · ' + EVENT.time;
     const parts = EVENT.date.split('.').map(s=>s.trim());
     if(nDay && parts[0]) nDay.textContent = parts[0];
     if(nMonth) nMonth.textContent = EVENT.day || EVENT.date;
     if(nYear) nYear.textContent = EVENT.time || '';
+    
+    // Keep hero and closing sections with generic text
+    // if(heroDateEl) heroDateEl.textContent remains unchanged
+    // if(closingDateEl) closingDateEl.textContent remains unchanged
   }
 })();
 
