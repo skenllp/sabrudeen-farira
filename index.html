@@ -7,12 +7,13 @@
 
 <meta property="og:title" content="Sabrudeen & Farira — Nikkah Invitation">
 <meta property="og:description" content="Join us in celebrating the Nikkah Ceremony of Mahaboob Sabrudeen & Farira Begum at The New College Auditorium, Chennai.">
-<meta property="og:image" content="assets/images/hero-bg.png">
+<meta property="og:image" content="https://sabrudeen-farira.vercel.app/assets/images/og-image.jpg">
+<meta property="og:url" content="https://sabrudeen-farira.vercel.app/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Sabrudeen & Farira — Nikkah Invitation">
 <meta name="twitter:description" content="Join us in celebrating the Nikkah Ceremony of Mahaboob Sabrudeen & Farira Begum at The New College Auditorium, Chennai.">
-<meta name="twitter:image" content="assets/images/hero-bg.png">
+<parameter name="twitter:image" content="https://sabrudeen-farira.vercel.app/assets/images/og-image.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -227,10 +228,10 @@ a{ color:inherit; }
 
 #open-btn{
   position:absolute; left:50%; bottom:9%; transform:translateX(-50%);
-  background:none;
-  border:none;
+  background:rgba(91,59,36,0.85);
+  border:1px solid var(--copper);
   color:#FFFFFF;
-  padding:8px 10px;
+  padding:14px 32px;
   font-family:var(--font-display);
   font-size:16px;
   font-weight:700;
@@ -239,7 +240,14 @@ a{ color:inherit; }
   cursor:pointer;
   opacity:0;
   z-index:3;
+  border-radius:2px;
+  box-shadow:0 4px 16px rgba(91,59,36,0.4);
+  transition:background 0.3s var(--ease), transform 0.3s var(--ease);
   animation:fadeInUp 1.2s var(--ease) 0.4s forwards;
+}
+#open-btn:hover{
+  background:rgba(91,59,36,1);
+  transform:translate(-50%, -2px);
 }
 #open-btn.hidden{ display:none; }
 @keyframes fadeInUp{
