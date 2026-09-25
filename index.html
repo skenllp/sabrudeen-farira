@@ -848,17 +848,16 @@ const EVENT = {
   const nYear = document.getElementById('nikkah-year');
 
   if(hasDate){
-    // Only update scratch reveal and nikkah sections
+    // Update the card and prominent date/location text
     if(srDateEl) srDateEl.textContent = EVENT.date;
     if(srDayEl) srDayEl.textContent = EVENT.day + ' · ' + EVENT.time;
+    if(heroDateEl) heroDateEl.textContent = EVENT.date + ' · ' + EVENT.time;
+    if(closingDateEl) closingDateEl.textContent = EVENT.date + ' · ' + EVENT.day + ' · ' + EVENT.time;
+
     const parts = EVENT.date.split('.').map(s=>s.trim());
     if(nDay && parts[0]) nDay.textContent = parts[0];
     if(nMonth) nMonth.textContent = EVENT.day || EVENT.date;
     if(nYear) nYear.textContent = EVENT.time || '';
-    
-    // Keep hero and closing sections with generic text
-    // if(heroDateEl) heroDateEl.textContent remains unchanged
-    // if(closingDateEl) closingDateEl.textContent remains unchanged
   }
 })();
 
