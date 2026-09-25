@@ -97,19 +97,27 @@ a{ color:inherit; }
 
 .btn{
   display:inline-flex; align-items:center; gap:10px;
-  padding:14px 34px;
-  border:1px solid var(--copper);
-  border-radius:2px;
-  color:var(--copper-deep);
+  padding:16px 38px;
+  border:2px solid var(--copper);
+  border-radius:3px;
+  color:var(--ink);
+  background:var(--paper-soft);
   font-family:var(--font-display);
   font-size:15px;
+  font-weight:700;
   letter-spacing:0.18em;
   text-transform:uppercase;
   text-decoration:none;
-  background:transparent;
-  transition:background .45s var(--ease), color .45s var(--ease), letter-spacing .45s var(--ease);
+  box-shadow:0 4px 16px rgba(91,59,36,0.2);
+  transition:background .45s var(--ease), color .45s var(--ease), letter-spacing .45s var(--ease), transform .3s var(--ease);
 }
-.btn:hover{ background:var(--copper); color:var(--paper-soft); letter-spacing:0.22em; }
+.btn:hover{ 
+  background:var(--copper); 
+  color:var(--paper-soft); 
+  letter-spacing:0.22em;
+  transform:translateY(-2px);
+  box-shadow:0 6px 20px rgba(91,59,36,0.3);
+}
 
 /* ============================================================
    SCROLL REVEAL
@@ -273,7 +281,7 @@ section{
   max-width:520px;
   margin:0 auto;
   position:relative;
-  z-index:2;
+  z-index:10;
   text-align:center;
 }
 
@@ -289,20 +297,20 @@ section{
   height:440px;
   background-size:cover;
   background-repeat:no-repeat;
-  z-index:0;
+  z-index:1;
   pointer-events:none;
 }
 .bg-band.top{
   top:0;
   background-position:top center;
-  -webkit-mask-image:linear-gradient(to bottom, #000 55%, transparent 100%);
-  mask-image:linear-gradient(to bottom, #000 55%, transparent 100%);
+  -webkit-mask-image:linear-gradient(to bottom, #000 45%, transparent 100%);
+  mask-image:linear-gradient(to bottom, #000 45%, transparent 100%);
 }
 .bg-band.bottom{
   bottom:0;
   background-position:bottom center;
-  -webkit-mask-image:linear-gradient(to top, #000 55%, transparent 100%);
-  mask-image:linear-gradient(to top, #000 55%, transparent 100%);
+  -webkit-mask-image:linear-gradient(to top, #000 45%, transparent 100%);
+  mask-image:linear-gradient(to top, #000 45%, transparent 100%);
 }
 @media (min-width:700px){
   .bg-band{ height:560px; }
@@ -334,23 +342,26 @@ h1,h2,h3{ margin:0; font-weight:500; }
 .bismillah{
   font-family:var(--font-arabic);
   font-size:22px;
-  color:var(--copper-deep);
+  color:var(--ink);
   letter-spacing:0.02em;
   margin-bottom:34px;
   direction:rtl;
+  text-shadow:0 1px 3px rgba(91,59,36,0.15);
 }
 .monogram{
   font-size:15px;
   letter-spacing:0.5em;
-  color:var(--ink-faint);
+  color:var(--ink-soft);
   margin-bottom:26px;
+  text-shadow:0 1px 2px rgba(91,59,36,0.15);
 }
 .hero-names{
   font-size:clamp(40px,11vw,58px);
   line-height:1.15;
-  color:var(--copper-deep);
+  color:var(--ink);
   font-weight:700;
   letter-spacing:0.03em;
+  text-shadow:0 2px 4px rgba(91,59,36,0.2);
 }
 .hero-amp{
   display:block;
@@ -365,13 +376,15 @@ h1,h2,h3{ margin:0; font-weight:500; }
   font-style:italic;
   font-size:17px;
   letter-spacing:0.08em;
-  color:var(--ink-soft);
+  color:var(--ink);
+  text-shadow:0 1px 3px rgba(91,59,36,0.15);
 }
 .hero-date{
   margin-top:18px;
   font-size:19px;
   letter-spacing:0.28em;
-  color:var(--copper-deep);
+  color:var(--ink);
+  text-shadow:0 1px 3px rgba(91,59,36,0.15);
 }
 .scroll-cue{
   position:absolute;
@@ -488,24 +501,24 @@ h1,h2,h3{ margin:0; font-weight:500; }
 /* ============================================================
    INVITATION
 ============================================================ */
-#invitation{ background:var(--paper-soft); }
+#invitation{ background:var(--paper-soft); padding:180px 26px; }
 #invitation .bg-band{ background-image:url('assets/images/invitation-bg.png'); }
-.invite-lead{ font-size:17px; color:var(--ink-soft); line-height:1.8; font-weight:500; }
+.invite-lead{ font-size:17px; color:var(--ink-soft); line-height:1.8; font-weight:500; margin-bottom:12px; }
 .invite-caps{
-  margin:18px 0 6px;
+  margin:24px 0 12px;
   font-size:24px; letter-spacing:0.14em;
   color:var(--copper-deep);
   font-weight:700;
 }
 .invite-name{
   font-size:clamp(34px,9vw,44px);
-  margin:10px 0 22px;
+  margin:16px 0 28px;
   color:var(--ink);
   font-weight:700;
 }
 .invite-lineage{
   font-size:15px; line-height:1.9; color:var(--ink-soft);
-  max-width:380px; margin:0 auto;
+  max-width:380px; margin:0 auto 20px;
 }
 .invite-lineage b{ font-weight:600; color:var(--ink); }
 
@@ -539,6 +552,25 @@ h1,h2,h3{ margin:0; font-weight:500; }
   font-size:0.7em;
   margin:14px 0;
 }
+.ts-verse{
+  margin-top:48px;
+  font-size:16px;
+  line-height:1.8;
+  color:var(--ink-soft);
+  font-style:italic;
+  letter-spacing:0.02em;
+  max-width:440px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.ts-verse span{
+  display:block;
+  margin-top:8px;
+  font-size:13px;
+  letter-spacing:0.12em;
+  color:var(--copper-deep);
+  font-weight:600;
+}
 
 /* ============================================================
    FAMILY
@@ -569,6 +601,7 @@ h1,h2,h3{ margin:0; font-weight:500; }
   background-position:center center;
   min-height:92vh;
   display:flex; align-items:center;
+  padding:200px 26px;
 }
 .nikkah-title{ font-size:15px; letter-spacing:0.44em; color:var(--ink-faint); margin-bottom:36px; font-weight:600; }
 .nikkah-day{ font-size:clamp(58px,16vw,84px); line-height:1; color:var(--ink); font-weight:700; }
@@ -579,7 +612,7 @@ h1,h2,h3{ margin:0; font-weight:500; }
 }
 .nikkah-year{ font-size:17px; letter-spacing:0.4em; color:var(--ink-faint); margin-bottom:36px; font-weight:600; }
 .nikkah-venue{ font-size:22px; color:var(--ink); margin-bottom:4px; font-weight:700; }
-.nikkah-loc{ font-size:15px; letter-spacing:0.14em; color:var(--ink-soft); margin-bottom:38px; font-weight:600; }
+.nikkah-loc{ font-size:15px; letter-spacing:0.14em; color:var(--ink-soft); margin-bottom:46px; font-weight:600; }
 
 /* ============================================================
    CLOSING (permanent, mirrors the final video-exit moment)
@@ -712,27 +745,27 @@ h1,h2,h3{ margin:0; font-weight:500; }
     <div class="inner">
       <p class="invite-lead reveal">Mr. Abdul Salam &amp; Mrs. Mohideen Lubaina<br>cordially invite you to attend the</p>
       <div class="invite-caps reveal">Nikkah Ceremony</div>
-      <p class="invite-lead reveal" style="margin-bottom:0;">of their beloved Son</p>
+      <p class="invite-lead reveal">of their beloved Son</p>
       <h2 class="invite-name reveal">Mahaboob Sabrudeen</h2>
       <p class="invite-lineage reveal">
         Grandson of <b>Mr. Samsudeen</b> &amp; <b>Late Mrs. Begum Bee</b><br>
         <span style="font-size:12px; letter-spacing:0.2em; color:var(--ink-faint);">PATERNAL</span>
       </p>
-      <p class="invite-lineage reveal" style="margin-top:16px;">
+      <p class="invite-lineage reveal">
         Grandson of <b>Mr. Jainul Abdeen</b> &amp; <b>Mrs. Jainul Arafa</b><br>
         <span style="font-size:12px; letter-spacing:0.2em; color:var(--ink-faint);">MATERNAL</span>
       </p>
 
-      <div class="divider reveal"></div>
+      <div class="divider reveal" style="margin:32px auto;"></div>
 
       <div class="invite-caps reveal">With</div>
       <h2 class="invite-name reveal">Farira Begum</h2>
-      <p class="invite-lead reveal" style="margin-bottom:20px;">Daughter of Mr. Syed Ibrahim &amp; Mrs. Mydeen Ibrahimal</p>
+      <p class="invite-lead reveal">Daughter of Mr. Syed Ibrahim &amp; Mrs. Mydeen Ibrahimal</p>
       <p class="invite-lineage reveal">
         Granddaughter of <b>Late Mr. Syed Farooq Bakkurudeen</b> &amp; <b>Late Mrs. Ibrahimal</b><br>
         <span style="font-size:12px; letter-spacing:0.2em; color:var(--ink-faint);">PATERNAL</span>
       </p>
-      <p class="invite-lineage reveal" style="margin-top:16px;">
+      <p class="invite-lineage reveal">
         Granddaughter of <b>Mrs. Ahamed Ummal</b> &amp; <b>Late Mr. Mydeen Khan</b><br>
         <span style="font-size:12px; letter-spacing:0.2em; color:var(--ink-faint);">MATERNAL</span>
       </p>
@@ -748,6 +781,7 @@ h1,h2,h3{ margin:0; font-weight:500; }
         <span class="ts-amp">&amp;</span>
         Farira Begum
       </div>
+      <div class="ts-verse reveal">"And We created you in pairs."<br><span>— Surah An-Naba, 78:8</span></div>
     </div>
     <div class="butterfly" style="bottom:14%; left:10%; width:28px;" id="bfly-souls"></div>
   </section>
