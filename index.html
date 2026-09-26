@@ -627,7 +627,8 @@ h1,h2,h3{ margin:0; font-weight:500; }
   padding:150px 26px 120px;
 }
 .closing-names{ font-size:clamp(30px,8vw,40px); color:var(--ink); letter-spacing:0.04em; font-weight:700; }
-.closing-date{ font-size:16px; letter-spacing:0.3em; color:var(--copper-deep); margin:16px 0; font-weight:700; }
+.closing-date{ font-size:16px; letter-spacing:0.25em; color:var(--copper-deep); margin:16px 0 6px; font-weight:700; }
+.closing-time{ font-size:15px; letter-spacing:0.18em; color:var(--copper-deep); margin:0 0 18px; font-weight:600; }
 .closing-tag{ font-style:italic; font-size:14px; letter-spacing:0.1em; color:var(--ink-faint); }
 
 /* ============================================================
@@ -781,7 +782,7 @@ h1,h2,h3{ margin:0; font-weight:500; }
         <span class="ts-amp">&amp;</span>
         Farira Begum
       </div>
-      <div class="ts-verse reveal">"And We created you in pairs."<br><span>— Surah An-Naba, 78:8</span></div>
+      <div class="ts-verse reveal">“And We created you in pairs.”<br><span>— The Holy Qur’an 78:8</span></div>
     </div>
     <div class="butterfly" style="bottom:14%; left:10%; width:28px;" id="bfly-souls"></div>
   </section>
@@ -838,7 +839,8 @@ h1,h2,h3{ margin:0; font-weight:500; }
     <div class="inner">
       <div class="butterfly" style="position:relative; margin:0 auto 28px; width:32px;" id="bfly-closing"></div>
       <div class="closing-names reveal">Sabrudeen &amp; Farira</div>
-      <div class="closing-date reveal" id="closing-date">Date &amp; time — coming soon</div>
+      <div class="closing-date reveal" id="closing-date">Date — coming soon</div>
+      <div class="closing-time reveal" id="closing-time">Time — coming soon</div>
       <div class="closing-tag reveal">Forever begins here</div>
     </div>
   </section>
@@ -875,6 +877,7 @@ const EVENT = {
   const hasDate = EVENT.date && EVENT.day && EVENT.time;
   const heroDateEl = document.getElementById('hero-date-line');
   const closingDateEl = document.getElementById('closing-date');
+  const closingTimeEl = document.getElementById('closing-time');
   const srDateEl = document.getElementById('sr-content-date');
   const srDayEl = document.getElementById('sr-content-day');
   const nDay = document.getElementById('nikkah-day');
@@ -886,7 +889,8 @@ const EVENT = {
     if(srDateEl) srDateEl.textContent = EVENT.date;
     if(srDayEl) srDayEl.textContent = EVENT.day + ' · ' + EVENT.time;
     if(heroDateEl) heroDateEl.textContent = EVENT.date + ' · ' + EVENT.time;
-    if(closingDateEl) closingDateEl.textContent = EVENT.date + ' · ' + EVENT.day + ' · ' + EVENT.time;
+    if(closingDateEl) closingDateEl.textContent = EVENT.date;
+    if(closingTimeEl) closingTimeEl.textContent = EVENT.time;
 
     const parts = EVENT.date.split('.').map(s=>s.trim());
     if(nDay && parts[0]) nDay.textContent = parts[0];
